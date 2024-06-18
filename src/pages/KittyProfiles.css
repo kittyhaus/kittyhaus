@@ -1,0 +1,42 @@
+.kitty-profiles-subtitle-container {
+    margin-bottom: 8px;
+    font-size: .5rem;
+    text-align: left;
+}
+
+.kitty-profiles-img-container {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 108%;
+}
+
+.kitty-profile-names-container {
+    margin-bottom: 8px;
+    position: relative;
+    display: block;
+}
+
+.kitty-profile-img {
+    width: 100%;
+    height: auto;
+}
+
+.back-btn {
+    width: auto;
+    height: 1.2rem;
+    background-color: transparent;
+    padding: 0;
+    text-align: left;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    border: none;
+    font-size: .5rem;
+}

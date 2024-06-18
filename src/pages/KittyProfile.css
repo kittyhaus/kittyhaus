@@ -1,0 +1,40 @@
+.profile-btn {
+    width: auto;
+    height: 1.2rem;
+    background-color: transparent;
+    padding: 0;
+    text-align: left;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    border: none;
+    font-size: .6rem;
+}
+
+.profile-name {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.profile-btn:hover:before {
+    content: "▶";
+}
+
+.profile-btn.selected {
+    margin-bottom: 10px;
+}
+
+.profile-btn.selected::before {
+    content: "▶";
+}
+
+.profile-stats {
+    text-align: left;
+    margin-bottom: 6px;
+    font-size: .6rem;
+    text-transform: uppercase;
+}
+
+.profile-stats-container {
+    background-color: rgba(0,0,0,0.1);
+}

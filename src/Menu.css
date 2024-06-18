@@ -1,0 +1,38 @@
+.base-btn {
+  width: auto;
+  height: 1.2rem;
+  background-color: transparent;
+  padding: 0;
+  text-align: left;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  border: none;
+}
+
+.base-btn.selected {
+  margin-bottom: 10px;
+}
+
+.menu-item-btn {
+  font-size: .6rem;
+}
+
+.menu-title {
+  display: block;
+}
+
+.menu-item-btn:hover:before {
+  content: "▶";
+}
+
+h1 {
+  font-size: .6rem !important; 
+  text-transform: uppercase;
+  height: 1.2rem !important;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  border: none;
+  margin: 0px 0px 10px 0px;
+}

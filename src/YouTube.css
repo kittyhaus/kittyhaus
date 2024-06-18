@@ -1,0 +1,12 @@
+.youtube-iframe {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    border: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    width: auto;
+    height: auto;
+    pointer-events: none;
+    z-index: 0;
+}

@@ -1,0 +1,65 @@
+#root {
+  text-align: center;
+  font-size: 10px;
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.logo {
+  position: fixed;
+  width: 100px;
+  left: 50vw;
+  bottom: -25px;
+  margin-left: -50px;
+  z-index: 1;
+}
+
+.wrapper-container {
+  position: absolute;
+  right: 30px;
+  top: 60px;
+  display: block;
+  z-index:1;
+}
+
+.wrapper-left-container {
+  position: fixed;
+  left: 63px;
+  top: 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper-right-container {
+  position: fixed;
+  right: 30px;
+  top: 60px;
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title-container {
+  margin-bottom: 8px;
+  font-size: .7rem;
+  text-align: left;
+}
+
+.subtitle-container {
+  margin-bottom: 8px;
+  font-size: .5rem;
+  text-align: left;
+}
+
+@media (max-width: 1000px) {
+  .wrapper-left-container {
+    position: initial;
+    display: block;
+  }
+  
+  .wrapper-right-container {
+    position: initial;
+    display: block;
+  }
+}

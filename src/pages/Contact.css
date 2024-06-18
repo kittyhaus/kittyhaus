@@ -1,0 +1,7 @@
+.email-link {
+  color: white;
+}
+
+.email-link:hover {
+  color: black;
+}
