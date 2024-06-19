@@ -16,6 +16,13 @@
     margin-bottom: 10px;
 }
 
+.profile-btn:hover {
+    background: -webkit-linear-gradient(rgb(255, 18, 18) 30%, rgb(255, 215, 38));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
 .profile-btn:hover:before {
     content: "▶";
 }

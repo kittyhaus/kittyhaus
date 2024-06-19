@@ -17,7 +17,7 @@ export default function Menu({ pageName, setPageName }: MenuProps) {
 				onClick={() => setPageName(PAGES.MAIN)}
 				className='base-btn selected'
 			>
-				&lt; {pageName}
+				<p data-text={`< ${pageName}`}className='btn-text'>&lt; {pageName}</p>
 			</motion.button>)
 		}
 
@@ -30,7 +30,7 @@ export default function Menu({ pageName, setPageName }: MenuProps) {
 					whileTap={{ scale: 1.2 }}
 					onClick={() => setPageName(item)}
 				>
-					{item}
+					<p data-text={item} className='btn-text'>{item}</p>
 				</motion.button>
 			)
 		)

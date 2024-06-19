@@ -19,7 +19,7 @@ export default {
 				{
 					id: 1,
 					name: "Nikki",
-					img: "/season/1/nikki.jpg",
+					img: "/profile-img-placeholder.png",
 					stats: {
 						weight: 50,
 						play: 5,
@@ -31,7 +31,7 @@ export default {
 				{
 					id: 2,
 					name: "Cardi",
-					img: "/season/1/cardi.jpg",
+					img: "/profile-img-placeholder.png",
 					stats: {
 						weight: 49,
 						play: 3,
@@ -43,7 +43,7 @@ export default {
 				{
 					id: 3,
 					name: "Kendrick",
-					img: "/season/1/kendrick.jpg",
+					img: "/profile-img-placeholder.png",
 					stats: {
 						weight: 39,
 						play: 4,

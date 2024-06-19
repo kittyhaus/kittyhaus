@@ -22,7 +22,7 @@ export default function App() {
       <div className='wrapper-container'>
         <div className='wrapper-left-container'>
           <div className='subtitle-container'>NOW PLAYING</div>
-          <div className='title-container'>KITTYHAUS<br />SZN.01</div>
+        <div className='title-container'><p data-text='KITTYHAUS'>KITTYHAUS</p><p data-text='SZN.01'>SZN.01</p></div>
         </div>
         <div className='wrapper-right-container'>
           <Menu pageName={pageName} setPageName={setPageName}/>

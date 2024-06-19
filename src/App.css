@@ -42,8 +42,32 @@
 
 .title-container {
   margin-bottom: 8px;
-  font-size: .7rem;
+  font-size: .8rem;
   text-align: left;
+}
+
+.title-container > p {
+  -webkit-text-stroke-width: 0.2px;
+  -webkit-text-stroke-color: black;
+  position: relative;
+  background: -webkit-linear-gradient(rgb(255, 18, 18) 30%, rgb(255, 215, 38));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0px;
+}
+
+.title-container > p::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  text-shadow:   
+    -0.5px 0.5px 0 #000,  
+    -1.0px 1px 0 #000,
+    -1.5px 1.5px 0 #000,
+    -2px 2px 0 #000;
 }
 
 .subtitle-container {

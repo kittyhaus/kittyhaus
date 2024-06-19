@@ -18,12 +18,35 @@
   font-size: .6rem;
 }
 
-.menu-title {
-  display: block;
+.btn-text {
+  color: white;
+  -webkit-text-stroke-width: 0.2px;
+  -webkit-text-stroke-color: black;
+  position:relative;
 }
 
-.menu-item-btn:hover:before {
-  content: "▶";
+.base-btn:hover > .btn-text {
+  background: -webkit-linear-gradient(rgb(255, 18, 18) 30%, rgb(255, 215, 38));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.btn-text:before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  text-shadow:   
+    -0.5px 0.5px 0 #000,  
+    -1.0px 1px 0 #000,
+    -1.5px 1.5px 0 #000,
+    -2px 2px 0 #000;
+}
+
+.menu-title {
+  display: block;
 }
 
 h1 {
