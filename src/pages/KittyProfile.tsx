@@ -52,7 +52,7 @@ function KittyProfile({ profile, hoverFn, clickFn, isSelected }: KittyProfilePro
 				whileHover={{ scale: 1.2 }}
 				whileTap={{ scale: 1.2 }}
 			>
-				<p className='profile-name'>{ profile.name }</p>
+				<p  data-text={profile.name} className='profile-name'>{ profile.name }</p>
 			</motion.button>
 			<div className="profile-stats-container">
 				{ generateStats() }
