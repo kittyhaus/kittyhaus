@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import kittyhausLogo from '/kittyhausLogo.svg'
+import kittyhausLogo from '/kittyhaus-logo.svg'
+import fullscreenIcon from '/fullscreen.svg'
 import './App.css'
 import YouTube from './YouTube.tsx'
 import Menu from './Menu.tsx'
@@ -9,6 +10,29 @@ import { PAGES } from './constants.tsx'
 
 export default function App() {
 	const [ pageName, setPageName ] = useState(PAGES.MAIN)
+
+
+  const isFullScreen = (): boolean => {
+    return document.fullscreenElement !== null
+  }
+  const enterFullScreen = () => {
+    const root = document.getElementById('root')
+    root?.requestFullscreen().then(() => {
+    })
+  }
+
+  const exitFullScreen = () => {
+    document.exitFullscreen().then(() => {
+    })
+  }
+
+  const handleFullScreenBtnClick = () => {
+    if (isFullScreen()) {
+      exitFullScreen()
+    } else {
+      enterFullScreen()
+    }
+  }
 
   return (
     <>
@@ -30,6 +54,7 @@ export default function App() {
         </div>
       </div>
       <YouTube embedId={`EjDmlmBymG4`} />
+      <button className='fullscreen-btn' onClick={() => handleFullScreenBtnClick() }><img className='fullscreen-btn-img' src={fullscreenIcon} alt='toggle fullscreen' /></button>
     </>
   )
 }

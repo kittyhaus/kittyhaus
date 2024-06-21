@@ -89,3 +89,22 @@
     display: block;
   }
 }
+
+.fullscreen-btn {
+  position: fixed;
+  bottom: 60px;
+  right: 60px;
+  width: auto;
+  height: 1.2rem;
+  background-color: transparent;
+  padding: 0;
+  text-align: left;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  border: none;
+}
+
+.fullscreen-btn-img {
+  width: 30px;
+}
