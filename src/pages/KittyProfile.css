@@ -42,10 +42,6 @@
     margin-bottom: 10px;
 }
 
-.profile-btn.selected::before {
-    content: "▶";
-}
-
 .profile-stats {
     text-align: left;
     margin-bottom: 6px;

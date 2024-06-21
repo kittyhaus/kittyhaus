@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import kittyhausLogo from '/kittyhausTextLogo.svg'
+import kittyhausLogo from '/kittyhausLogo.svg'
 import './App.css'
 import YouTube from './YouTube.tsx'
 import Menu from './Menu.tsx'
