@@ -1,4 +1,4 @@
-.youtube-iframe {
+.yt-lite {
     position: fixed;
     right: 0;
     bottom: 0;
@@ -7,6 +7,6 @@
     min-height: 100vh;
     width: auto;
     height: auto;
-    pointer-events: none;
+    /* pointer-events: none; */
     z-index: 0;
 }
