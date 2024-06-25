@@ -7,6 +7,7 @@ export const PAGES = {
 }
 
 export const MAIN_MENU = [
+  'Watch',
   'About',
   'Kittens',
   'Donate',

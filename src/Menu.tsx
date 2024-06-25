@@ -4,10 +4,12 @@ import './Menu.css'
 
 interface MenuProps {
 	pageName: string,
-	setPageName: (pageName: string) => void
+	setPageName: (pageName: string) => void,
+	showMenu: boolean,
+	setShowMenu: (arg0: boolean) => void
 }
 
-export default function Menu({ pageName, setPageName }: MenuProps) {
+export default function Menu({ pageName, setPageName, showMenu, setShowMenu }: MenuProps) {
 	const renderMenuItems = () => {
 		if (pageName !== PAGES.MAIN) {
 		return (
@@ -21,24 +23,43 @@ export default function Menu({ pageName, setPageName }: MenuProps) {
 			</motion.button>)
 		}
 
-		return MAIN_MENU.map( item => 
-			 (
+		return MAIN_MENU.map((item, i) => {
+			if (i === 0) {
+				return (
 				<motion.button
-					key={item}
-					className='base-btn menu-item-btn'
-					whileHover={{ scale: 1.2 }}
-					whileTap={{ scale: 1.2 }}
-					onClick={() => setPageName(item)}
-				>
-					<p data-text={item} className='btn-text'>{item}</p>
-				</motion.button>
-			)
+						key={item}
+						className='base-btn menu-item-btn'
+						whileHover={{ scale: 1.2 }}
+						whileTap={{ scale: 1.2 }}
+						onClick={() => setShowMenu(false)}
+					>
+						<p data-text={item} className='btn-text'>{item}</p>
+					</motion.button>
+				)
+			} else {
+				return(
+					<motion.button
+						key={item}
+						className='base-btn menu-item-btn'
+						whileHover={{ scale: 1.2 }}
+						whileTap={{ scale: 1.2 }}
+						onClick={() => setPageName(item)}
+					>
+						<p data-text={item} className='btn-text'>{item}</p>
+					</motion.button>
+				)
+			}
+		}
+
 		)
 	}
 
-	return(
-		<>
-		{ renderMenuItems() }
-		</>
-	)
+	if (showMenu) {	
+		return(
+			<>
+			{ renderMenuItems() }
+			</>
+		)
+	}
+	
 }

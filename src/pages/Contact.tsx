@@ -5,7 +5,7 @@ export default function Contact() {
   return(
     <>
       <div className='container'>
-        Email us at <a className='email-link' href='mailto: meow@kittyhaus.tv'>meow<br />@kittyhaus.tv</a>
+        Email us at <br /><a className='email-link' href='mailto: meow@kittyhaus.tv'>meow@kittyhaus.tv</a>
       </div>
     </>
   )

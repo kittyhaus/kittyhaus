@@ -19,7 +19,7 @@
 }
 
 .profile-btn:hover > .profile-name {
-    background: -webkit-linear-gradient(rgb(255, 18, 18) 30%, rgb(255, 215, 38));
+    background: -webkit-linear-gradient(rgb(176, 33, 37) 30%, rgb(255, 215, 38));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
