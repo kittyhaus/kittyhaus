@@ -22,6 +22,11 @@ const YouTube = ({ embedId }: YouTubeProps) => {
 				pointerEvents: 'none',
 				zIndex: '-1'
 			}}
+			config={{
+				playerVars:{
+					playsinline: 0
+				}
+			}}
 		/>
 	)
 }
