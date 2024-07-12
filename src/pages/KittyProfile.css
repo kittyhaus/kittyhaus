@@ -1,54 +1,83 @@
 .profile-btn {
-    width: auto;
-    height: 1.2rem;
-    background-color: transparent;
-    padding: 0;
-    text-align: left;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    border: none;
-    font-size: .6rem;
+	width: auto;
+	height: 1.2rem;
+	background-color: transparent;
+	padding: 0;
+	text-align: left;
+	text-transform: uppercase;
+	display: flex;
+	align-items: center;
+	border: none;
+	font-size: .6rem;
 }
 
-.profile-name {
-    color: #FFF;
-    display: block;
-    margin-bottom: 10px;
-    position: relative;
+.profile-text {
+	color: #FFF;
+	display: block;
+	margin-bottom: 10px;
+	position: relative;
 }
 
-.profile-btn:hover > .profile-name {
-    background: -webkit-linear-gradient(rgb(176, 33, 37) 30%, rgb(255, 215, 38));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.profile-btn:hover>.profile-text {
+	background: -webkit-linear-gradient(rgb(255, 18, 18) 30%, rgb(255, 215, 38));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
 }
 
-.profile-name::before {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    text-shadow:   
-      -0.5px 0.5px 0 #000,  
-      -1.0px 1px 0 #000,
-      -1.5px 1.5px 0 #000,
-      -2px 2px 0 #000;
+.profile-btn:hover>.profile-text::before {
+	text-shadow:
+		-0.5px 0.5px 0 #871F78,
+		-1.0px 1px 0 #871F78,
+		-1.5px 1.5px 0 #871F78,
+		-2px 2px 0 #871F78;
+}
+
+
+.profile-text::before {
+	content: attr(data-text);
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	text-shadow:
+		-0.5px 0.5px 0 #000,
+		-1.0px 1px 0 #000,
+		-1.5px 1.5px 0 #000,
+		-2px 2px 0 #000;
 }
 
 .profile-btn.selected {
-    margin-bottom: 10px;
+	margin-bottom: 10px;
 }
 
 .profile-stats {
-    text-align: left;
-    margin-bottom: 6px;
-    font-size: .6rem;
-    text-transform: uppercase;
+	text-align: left;
+	margin-bottom: 10px;
+	font-size: .6rem;
+	text-transform: uppercase;
 }
 
 .profile-stats-container {
-    background-color: rgba(0,0,0,0.1);
+	background-color: rgba(0, 0, 0, 0.1);
+	padding: 10px;
+}
+
+.profile-name-container {
+	display: flex;
+	flex-direction: row;
+}
+
+.profile-btn.next-btn {
+	position: relative;
+	left: 12px;
+}
+
+.profile-btn.prev-btn {
+	position: relative;
+	right: 14px;
+}
+
+.weight-unit-text {
+	font-size: .5rem;
 }

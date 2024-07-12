@@ -5,7 +5,6 @@ export default {
 			current: true,
 			profiles: [
 				{
-					id: 0,
 					name: "Drake",
 					img: "/season/1/drake.jpg",
 					stats: {
@@ -17,7 +16,6 @@ export default {
 					}
 				},
 				{
-					id: 1,
 					name: "Nikki",
 					img: "/profile-img-placeholder.png",
 					stats: {
@@ -29,7 +27,6 @@ export default {
 					}
 				},
 				{
-					id: 2,
 					name: "Cardi",
 					img: "/profile-img-placeholder.png",
 					stats: {
@@ -41,7 +38,6 @@ export default {
 					}
 				},
 				{
-					id: 3,
 					name: "Kendrick",
 					img: "/profile-img-placeholder.png",
 					stats: {

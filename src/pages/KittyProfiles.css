@@ -22,7 +22,9 @@
 	color: #FFF;
 	margin-bottom: 8px;
 	position: relative;
-	display: block;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .kitty-profile-img {

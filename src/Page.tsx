@@ -6,7 +6,8 @@ import { PAGES } from './constants'
 
 interface PageProps {
   pageName: string,
-  setPageName: (pageName: string) => void
+  setPageName: (pageName: string) => void,
+  currentSeason: object
 }
 
 export default function Page({ pageName }: PageProps) {

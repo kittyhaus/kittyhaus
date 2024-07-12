@@ -1,0 +1,40 @@
+.controls-container {
+  position: fixed;
+  top: 65px;
+  left: 30px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+  max-height: 25px;
+}
+
+.controls-container.show {
+  max-height: 100%;
+}
+ 
+.control-btn {
+  height: 25px;
+  width: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  padding: 0;
+  text-align: left;
+  text-transform: uppercase;
+  display: flex;
+  border: none;
+}
+
+.control-btn:hover {
+  opacity: 0.5;
+}
+
+.control-btn:not(:last-child) {
+  margin-bottom:15px;
+}
+
+.control-btn-img {
+  height: 25px;
+  position: relative;
+}

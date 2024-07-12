@@ -11,12 +11,15 @@
     "gh-deploy": "git push origin :gh-pages && git subtree push --prefix dist origin gh-pages"
   },
   "dependencies": {
+    "@apollo/client": "^3.10.6",
     "framer-motion": "^11.2.10",
+    "graphql": "^16.9.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-player": "^2.16.0"
   },
   "devDependencies": {
+    "@types/node": "^20.14.9",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@typescript-eslint/eslint-plugin": "^7.2.0",

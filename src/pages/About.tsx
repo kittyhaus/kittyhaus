@@ -2,7 +2,7 @@ import './PageBaseContainer.css'
 export default function About() {
   return(
     <>
-      <div className='container'>
+      <div className='nes-container is-dark is-rounded'>
         Kittyhaus is based in Southern California.
         <br />
         <br />
