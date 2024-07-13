@@ -2,7 +2,7 @@ import './PageBaseContainer.css'
 
 export default function Donate() {
   return(
-    <div className='nes-container is-dark is-rounded'>
+    <>
       We welcome any donation amount. Your donations help us provide treats, toys and upgrades to the Kittyhaus playground.
       50% of all donations will benefit the <a href='https://meoowzresq.org/' target='_blank'>MeoowzResq Organization</a>.
       <br />
@@ -14,6 +14,6 @@ export default function Donate() {
       Thank you,
       <br />
       Kittyhaus
-    </div>
+    </>
   )
 }

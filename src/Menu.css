@@ -1,5 +1,5 @@
 .base-btn {
-  font-size: .7rem;
+  font-size: .8rem;
   width: auto;
   height: 1.2rem;
   background-color: transparent;
@@ -16,7 +16,7 @@
 }
 
 .menu-item-btn:not(:last-child) {
-  margin-bottom: .2rem;
+  margin-bottom: .4rem;
 }
 
 .btn-text {

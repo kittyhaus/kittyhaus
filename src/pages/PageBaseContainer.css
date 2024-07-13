@@ -1,23 +1,50 @@
-.container {
-  text-align: left;
-  font-size: .6rem;
-  background-color: rgba(0,0,0,0.4);
-  z-index: 2;
-  padding: 30px;
-  border-radius: 5px;
-  position: relative;
+.scroll-arrow {
+  position: absolute;
+  font-size: 1rem;
+  -moz-transition:all 0.5s ease-in-out;
+  -webkit-transition:all 0.5s ease-in-out;
+  -o-transition:all 0.5s ease-in-out;
+  -ms-transition:all 0.5s ease-in-out;
+  transition:all 0.5s ease-in-out;
+  -moz-animation:blink normal 1.5s infinite ease-in-out;
+  /* Firefox */
+  -webkit-animation:blink normal 1.5s infinite ease-in-out;
+  /* Webkit */
+  -ms-animation:blink normal 1.5s infinite ease-in-out;
+  /* IE */
+  animation:blink normal 1.5s infinite ease-in-out;
+  /* Opera */
 }
 
-.container:before {
-  content : "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom:  0;
-  margin: auto;
-  height  : 93%;
-  width   : 95%;  /* or 100px */
-  border:1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 5px;
+.scroll-arrow.down {
+  bottom: 22px;
+  right: 22px;
+}
+
+.scroll-arrow.up {
+  top: 20px;
+  right: 20px;
+}
+
+@keyframes blink {
+  0% {
+    color: rgba(255,255,255,1)
+  }
+  50% {
+    color: rgba(255,255,255,0.5)
+  }
+  100% {
+    color: rgba(255,255,255,1)
+  }
+}
+@-webkit-keyframes blink {
+  0% {
+    color: rgba(255,255,255,1)
+  }
+  50% {
+    color: rgba(255,255,255,0.5)
+  }
+  100% {
+    color: rgba(255,255,255,1)
+  }
 }

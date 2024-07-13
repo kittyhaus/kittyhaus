@@ -125,7 +125,7 @@ export default function App() {
           <span></span>
         </button>
       }
-           <YouTube videoId={`HQNgOt2TtC8`} isLive={isLive} />
+           <YouTube videoId={`HQNgOt2TtC8`} isLive={isLive} showMenu={showMenu}/>
     </>
   )
 }

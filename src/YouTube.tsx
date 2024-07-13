@@ -4,10 +4,11 @@ import Controls from './Controls'
 
 interface YouTubeProps {
 	videoId: string,
-	isLive: boolean
+	isLive: boolean,
+	showMenu: boolean
 }
 
-const YouTube = ({ videoId, isLive }: YouTubeProps) => {
+const YouTube = ({ videoId, isLive, showMenu}: YouTubeProps) => {
 	const [muted, setMuted] = useState(true)
 	const [playing, setPlaying] = useState(true)
 
@@ -17,13 +18,16 @@ const YouTube = ({ videoId, isLive }: YouTubeProps) => {
 	console.log('what is the url', youtubeUrl)
 	return (
 		<>
-			<Controls 
-				muted={muted}
-				setMuted={setMuted}
-				playing={playing}
-				setPlaying={setPlaying}
-				youtubeUrl={youtubeUrl}
-			/>
+			{
+				!showMenu &&
+				<Controls 
+					muted={muted}
+					setMuted={setMuted}
+					playing={playing}
+					setPlaying={setPlaying}
+					youtubeUrl={`${youtubeUrl}?autoplay=1`}
+				/>
+			}
 			<ReactPlayer
 				id="vid-player"
 				url={youtubeUrl}

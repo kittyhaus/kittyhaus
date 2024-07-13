@@ -1,3 +1,4 @@
+import PageBaseContainer from './pages/PageBaseContainer'
 import KittyProfiles from './pages/KittyProfiles'
 import About from './pages/About'
 import Contact from './pages/Contact'
@@ -17,13 +18,13 @@ export default function Page({ pageName }: PageProps) {
       case PAGES.MAIN:
         return 
       case PAGES.ABOUT:
-        return <About />
+        return <PageBaseContainer><About /></PageBaseContainer>
       case PAGES.KITTENS:
-        return <KittyProfiles />
+        return <PageBaseContainer><KittyProfiles /></PageBaseContainer>
       case PAGES.CONTACT:
-        return <Contact />
+        return <PageBaseContainer><Contact /></PageBaseContainer>
       case PAGES.DONATE:
-        return <Donate />
+        return <PageBaseContainer><Donate /></PageBaseContainer>
       default:
         return <></>
     }

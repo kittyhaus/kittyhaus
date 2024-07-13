@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { useQuery, gql } from '@apollo/client';
 import KittyProfile from './KittyProfile.tsx'
 import './KittyProfiles.css'
 import { Profile } from '../types.tsx'
-import { useQuery, gql } from '@apollo/client';
  
 const defaultKitty: Profile = {
     name: '',
@@ -74,9 +74,12 @@ function KittyProfiles() {
 		<>
 			<div className='kitty-profiles-subtitle-container'>STARRING</div>
 			<div className='kitty-profile-names-container'>
-				<div className="kitty-profiles-img-container">
-					{ featureImgUrl && <motion.img animate={{ opacity: 100 }} className="kitty-profile-img" src={featureImgUrl} /> }
-				</div>
+				{ 
+					!selectedKitty.name && 
+					<div className="kitty-profiles-img-container">
+						{ featureImgUrl && <motion.img animate={{ opacity: 100 }} className="kitty-profile-img" src={featureImgUrl} /> }
+					</div>
+				}
 				{ renderKittensList() }
 			</div>
 		</>

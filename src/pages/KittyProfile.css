@@ -1,6 +1,4 @@
 .profile-btn {
-	width: auto;
-	height: 1.2rem;
 	background-color: transparent;
 	padding: 0;
 	text-align: left;
@@ -8,13 +6,13 @@
 	display: flex;
 	align-items: center;
 	border: none;
-	font-size: .6rem;
+	font-size: .7rem;
 }
 
 .profile-text {
 	color: #FFF;
 	display: block;
-	margin-bottom: 10px;
+	margin-bottom: .4rem;
 	position: relative;
 }
 
@@ -47,10 +45,6 @@
 		-2px 2px 0 #000;
 }
 
-.profile-btn.selected {
-	margin-bottom: 10px;
-}
-
 .profile-stats {
 	text-align: left;
 	margin-bottom: 10px;
@@ -58,14 +52,10 @@
 	text-transform: uppercase;
 }
 
-.profile-stats-container {
-	background-color: rgba(0, 0, 0, 0.1);
-	padding: 10px;
-}
-
 .profile-name-container {
 	display: flex;
 	flex-direction: row;
+	justify-content: center;
 }
 
 .profile-btn.next-btn {

@@ -54,18 +54,13 @@ export default function Controls({
     }
   }
 
-  const controlBtnClickFn = () => {
-    console.log('control btn clicked!')
-    setShowControls(!showControls)
-  }
-
   return(
     <motion.div initial={{ maxHeight: '25px' }} animate={{ maxHeight: showControls ? '185px' : '25px'  }} className='controls-container'>
       <motion.button
         className='control-btn'
-        onClick={() => controlBtnClickFn()}
-        initial={{ rotate: 0 }}
-        animate={{ rotate: showControls ? 90 : 0 }}
+        onClick={() =>     setShowControls(!showControls)}
+        initial={{ rotate: 0, opacity: 0 }}
+        animate={{ rotate: showControls ? 90 : 0, opacity: 1}}
         title={`${showControls ? `Hide` : `Show`} controls`}
       >
         <img className='control-btn-img' src={settingsIcon} alt='controls'/>

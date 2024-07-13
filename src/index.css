@@ -63,6 +63,22 @@ button:focus-visible {
 }
 
 .nes-container.is-dark {
+  position: relative;
+  padding: 30px;
   background-color: rgba(0,0,0,0.4);
   border-radius: 5px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: auto;
+  width: 600px;
+  max-width: 80vw;
+  max-height: 60vh;
+}
+
+.nes-container.is-dark::after {
+  background-color: transparent;
+}
+
+scrollbar {
+  background-color: transparent;
 }

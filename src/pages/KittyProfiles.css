@@ -1,8 +1,8 @@
 .kitty-profiles-subtitle-container {
 	color: #FFF;
-	margin-bottom: 8px;
+	margin-bottom: 16px;
 	font-size: .5rem;
-	text-align: left;
+	text-align: center;
 }
 
 .kitty-profiles-img-container {
@@ -15,16 +15,14 @@
 	overflow: hidden;
 	position: absolute;
 	top: 0;
-	right: 108%;
+	right: 115%;
 }
 
 .kitty-profile-names-container {
 	color: #FFF;
-	margin-bottom: 8px;
+	margin: 0 auto;
 	position: relative;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	display: table;
 }
 
 .kitty-profile-img {
