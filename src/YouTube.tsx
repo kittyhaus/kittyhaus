@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import ReactPlayer from 'react-player/youtube'
 import Controls from './Controls'
+import { isMobileDevice } from './shared/sharedFunctions'
 
 interface YouTubeProps {
 	videoId: string,
@@ -25,7 +26,7 @@ const YouTube = ({ videoId, isLive, showMenu}: YouTubeProps) => {
 					setMuted={setMuted}
 					playing={playing}
 					setPlaying={setPlaying}
-					youtubeUrl={`${youtubeUrl}?autoplay=1`}
+					youtubeUrl={`${youtubeUrl}?autoplay=1&mute=1`}
 				/>
 			}
 			<ReactPlayer
@@ -46,7 +47,7 @@ const YouTube = ({ videoId, isLive, showMenu}: YouTubeProps) => {
 				}}
 				config={{
 					playerVars:{
-						playsinline: 0
+						playsinline: isMobileDevice() ? 1 : 0
 					}
 				}}
 			/>
