@@ -4,7 +4,6 @@ import './Menu.css'
 
 interface MenuProps { 
 	initialLoad: boolean,
-	setInitialLoad: (arg0: boolean) => void,
 	pageName: string,
 	setPageName: (pageName: string) => void,
 	showMenu: boolean,
@@ -12,7 +11,6 @@ interface MenuProps {
 }
 
 export default function Menu({
-	setInitialLoad,
 	pageName,
 	setPageName,
 	showMenu,
@@ -21,7 +19,6 @@ export default function Menu({
 }: MenuProps) {
 	
 	const onClickFn = (item: string) => {
-		setInitialLoad(false)
 		if (item === MAIN_MENU[0]) {
 			setShowMenu(false)
 		}

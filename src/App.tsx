@@ -9,22 +9,24 @@ import { PAGES } from './constants.tsx'
 import { useQuery, gql } from '@apollo/client';
 
 export default function App() {
-  const [ initialLoad, setInitialLoad ] = useState(true)
-  const [ pageName, setPageName ] = useState(PAGES.MAIN)
-  const [ showMenu, setShowMenu ] = useState(false)
-  const [ isLive, setIsLive ] = useState(false)
+  const [initialLoad, setInitialLoad] = useState(true)
+  const [pageName, setPageName] = useState(PAGES.MAIN)
+  const [showMenu, setShowMenu] = useState(false)
+  const [isLive, setIsLive] = useState(false)
+  const [videoId, setVideoId] = useState('')
 
   useEffect(() => {
     async function getYoutubeLiveStatus() {
-      const url= `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCPov_QpFdKEUdewJF2-oFzg&type=video&eventType=live&key=AIzaSyASqiJi-U60SZDZP2BQL71xJSElj99xUfU`
+      const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCPov_QpFdKEUdewJF2-oFzg&type=video&eventType=live&key=AIzaSyASqiJi-U60SZDZP2BQL71xJSElj99xUfU`
       try {
         const response = await fetch(url)
         if (!response.ok) {
           throw new Error(`Response status: ${response.status}`);
         }
-    
+
         const data = await response.json()
         if (data.items.length > 0) {
+          setVideoId(data.items[0].id.videoId)
           setIsLive(true)
         }
       } catch (error) {
@@ -35,8 +37,8 @@ export default function App() {
     }
 
     getYoutubeLiveStatus()
-  },[])
-  
+  }, [])
+
   const GET_CURRENT_SEASON = gql`
   query currentSeason {
     seasonCollection (where: { current: true }) {
@@ -59,19 +61,14 @@ export default function App() {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error : {error.message}</p>;
 
-
-
-  // const seasons = data.seasonCollection.items
-  console.log(`data is`, data)
   const currentSeason = data.seasonCollection.items[0]
   const seasonTitle = currentSeason.seasonNumber < 10 ? `SEASON.0${currentSeason.seasonNumber}` : `SEASON.${currentSeason.seasonNumber}`
 
-
   const handleMenuBtnClick = () => {
+    setInitialLoad(false)
     setPageName(PAGES.MAIN)
     setShowMenu(true)
   }
-
 
   return (
     <>
@@ -84,48 +81,47 @@ export default function App() {
       />
       <div className='flex-container'>
         <div className='row'>
-          <motion.div 
-            initial={{ y: '25px', opacity: 0}}
+          <motion.div
+            initial={{ y: '25px', opacity: 0 }}
             animate={{ y: '0', opacity: 1 }}
-            transition={{ duration: 1.5}}
+            transition={{ duration: 1.5 }}
             className='title-container'>
-              <h1 data-text='KITTYHAUS'>KITTYHAUS</h1>
+            <h1 data-text='KITTYHAUS'>KITTYHAUS</h1>
           </motion.div>
           <motion.div
-            initial={{  opacity: 0, maxWidth: '0%'}}
+            initial={{ opacity: 0, maxWidth: '0%' }}
             animate={{ opacity: 1, maxWidth: '100%' }}
             transition={{ duration: 1.8, delay: 1.3 }}
             className='title-container title-season'>
-              <p data-text={seasonTitle}>{seasonTitle}</p>
+            <p data-text={seasonTitle}>{seasonTitle}</p>
           </motion.div>
         </div>
         <div className='row menu'>
           <Menu
             initialLoad={initialLoad}
-            setInitialLoad={setInitialLoad}
             pageName={pageName}
             setPageName={setPageName}
             showMenu={showMenu}
             setShowMenu={setShowMenu}
           />
-          <Page pageName={pageName} setPageName={setPageName} currentSeason={currentSeason}/>
+          <Page pageName={pageName} setPageName={setPageName} currentSeason={currentSeason} />
         </div>
       </div>
       <motion.div
-        initial={{ backgroundColor: initialLoad ? 'rgba(0, 0 , 0, 1)' : 'rgba(0, 0, 0, 0, 0'}}
+        initial={{ backgroundColor: initialLoad ? 'rgba(0, 0 , 0, 1)' : 'rgba(0, 0, 0, 0, 0' }}
         animate={{ backgroundColor: showMenu ? 'rgba(0, 0, 0, 0.5)' : 'rgba(0, 0, 0, 0)' }}
-        transition={{ delay:  initialLoad ? 3.75 : 0, duration: 2.5 }}
+        transition={{ delay: initialLoad ? 3.8 : 0, duration: 2 }}
         className='overlay-bg'
-      /> 
-      { 
-        !showMenu && 
+      />
+      {
+        !showMenu &&
         <button className='hamburger-btn' onClick={() => handleMenuBtnClick()}>
           <span></span>
           <span></span>
           <span></span>
         </button>
       }
-           <YouTube videoId={`HQNgOt2TtC8`} isLive={isLive} showMenu={showMenu}/>
+      <YouTube videoId={videoId || `HQNgOt2TtC8`} isLive={isLive} showMenu={showMenu} />
     </>
   )
 }

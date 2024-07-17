@@ -18,7 +18,6 @@ export default function PageBaseContainer({ children }: PageBaseContainerProps) 
   }, [])
 
   const onScroll = (e: React.ChangeEvent<any>) => {
-    console.log('scroll top + offsetHeight', e.target.scrollTop + e.target.offsetHeight, 'scrollHeight', e.target.scrollHeight)
     if (e.target.scrollTop + e.target.offsetHeight >= e.target.scrollHeight) {
       setIsAtPageBottom(true)
     } else {

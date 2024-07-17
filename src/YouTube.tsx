@@ -12,11 +12,8 @@ interface YouTubeProps {
 const YouTube = ({ videoId, isLive, showMenu}: YouTubeProps) => {
 	const [muted, setMuted] = useState(true)
 	const [playing, setPlaying] = useState(true)
+	const youtubeUrl = isLive ? `https://www.youtube.com/live/${videoId}` : `https://www.youtube.com/embed/${videoId}`
 
-	console.log('Youtube Component', 'is Live?', isLive, 'videoId:', videoId)
-	const youtubeUrl = isLive ? `https://www.youtube.com/embed/live_stream?channel=UCPov_QpFdKEUdewJF2-oFzg` : `https://www.youtube.com/embed/${videoId}`
-
-	console.log('what is the url', youtubeUrl)
 	return (
 		<>
 			{
